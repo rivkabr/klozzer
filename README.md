@@ -9,6 +9,9 @@ It relies on the [File System Api](https://developer.mozilla.org/en-US/docs/Web/
 
 Usage
 =====
+add to your `project.clj`
+
+[![Clojars Project](http://clojars.org/viebel/klozzer/latest-version.svg)](http://clojars.org/viebel/klozzer)
 
 The low-level layer is basically a wrapper of the `File System API`:
 

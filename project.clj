@@ -1,4 +1,4 @@
-(defproject viebel/klozzer "0.3.0"
+(defproject viebel/klozzer "0.3.1"
   :description "File System Browser API with core.async"
   :url "https://github.com/viebel/klozzer"
   :license {:name "Eclipse Public License"
