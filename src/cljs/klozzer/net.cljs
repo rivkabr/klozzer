@@ -71,13 +71,14 @@
   (let [[url-for-get url-for-head url-for-timestamp] (if (seqable? url) url [url url])
         key (string/replace (str key) "/" ".")]
     (go
-        (if-let [my-data (<! (local-file-when-up-to-date key response-type url-for-head url-for-timestamp))]
-            my-data
-            (let [[status data] (<! (get-url url-for-get response-type))]
-              (when (= :ok status)
-                (when @fs
-                  (-write @fs key data))
-                data))))))
+      (if-let [my-data (<! (local-file-when-up-to-date key response-type url-for-head url-for-timestamp))]
+          [:ok my-data]
+          (let [[status data] (<! (get-url url-for-get response-type))]
+            (if (= :error status)
+                [:error data]
+                (do (when @fs
+                      (-write @fs key data))
+                    [:ok data])))))))
 
 (defn get-several-files [get-single-file-func coll]
   (go-loop [res {} channels (map get-single-file-func coll)]

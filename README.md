@@ -7,6 +7,9 @@
 It relies on the [File System Api](https://developer.mozilla.org/en-US/docs/Web/API/LocalFileSystem) therefore it will work only on Chrome. It might be interesting to combine it with [idb.filesystem.js](https://github.com/ebidel/idb.filesystem.js) in order to make it available on other browsers.
 
 ## Usage
+add to your `project.clj` dependencies:
+
+[![Clojars Project](http://clojars.org/viebel/klozzer/latest-version.svg)](http://clojars.org/viebel/klozzer)
 
 The low-level layer is basically a wrapper of the `File System API`:
 
