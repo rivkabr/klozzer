@@ -6,6 +6,7 @@
             :distribution :repo}
 
   :min-lein-version "2.3.4"
+  :main ring.server
 
   ;; We need to add src/cljs too, because cljsbuild does not add its
   ;; source-paths to the project source-paths

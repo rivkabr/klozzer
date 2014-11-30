@@ -27,7 +27,12 @@
 ;;; allows to start and stop thejetty server from the repl.
 (defn run
   "Run the ring server. It defines the server symbol with defonce."
-  []
-  (defonce server
-    (jetty/run-jetty #'site {:port 3000 :join? false}))
-  server)
+  [port]
+  (let [port (or port 3000)]
+    (defonce server
+      (jetty/run-jetty #'site {:port port :join? false}))
+    server))
+
+(defn -main
+  [& args]
+  (run (read-string (first args))))

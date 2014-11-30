@@ -30,6 +30,11 @@ There is a higher level layer that provides caching:
 The project was built using [cljs-start](https://github.com/magomimmo/cljs-start). 
 
 
+### Run the server
+```bash
+    lein run 3000 # replace 3000 by <port>
+```
+Then open [localhost:3000] in a browser.
 ### Installing PhantomJS
 
 [Phantomjs][6] is a headless-browser based on [WebKit][10] used mainly
