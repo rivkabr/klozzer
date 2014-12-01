@@ -1,4 +1,4 @@
-(ns test.live3
+(ns test.live4
   (:use-macros [cljs.core.async.macros :only [go go-loop]])
   (:require [klozzer.net :as net]))
 
@@ -10,7 +10,7 @@
 
 (net/init-fs 10000)
 (go
-   (println (<! (net/get-cached-url "http://localhost:4567" "google" "text"))))
+   (println (<! (net/get-cached-url "http://localhost:4000" "google" "text"))))
 
 
 

@@ -1,4 +1,4 @@
-(defproject viebel/klozzer "0.3.1"
+(defproject viebel/klozzer "0.3.2"
   :description "File caching and File System Browser API with core.async"
   :url "https://github.com/viebel/klozzer"
   :license {:name "Eclipse Public License - v 1.0"
@@ -10,7 +10,7 @@
 
   ;; We need to add src/cljs too, because cljsbuild does not add its
   ;; source-paths to the project source-paths
-  :source-paths ["src/clj" "src/cljs"]
+  :source-paths ["src/cljs"]
 
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [com.andrewmcveigh/cljs-time "0.1.6"]
@@ -28,7 +28,7 @@
             ;; in the packaged jar when you issue lein jar command and
             ;; any other command that depends on it
             :klozzer
-            {:source-paths ["src/cljs" "src/clj"]
+            {:source-paths ["src/cljs"]
              ;; The :jar true option is not needed to include the CLJS
              ;; sources in the packaged jar. This is because we added
              ;; the CLJS source codebase to the Leiningen
