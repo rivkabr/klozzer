@@ -26,6 +26,18 @@ There is a higher level layer that provides caching:
 
 * get-cached-url
 
+## Examples
+```
+(get-cached-url "http://localhost:4000" "google" "text")
+;first time, will perform a get request
+
+(get-cached-url "http://localhost:4000" "google" "text")
+;second time, has the key in cache will check by head request if data is up to date
+                                                        
+(get-cached-url "http://localhost:4000" "google-net" "text")
+;different key, will perform a get request 
+```
+
 ## Develompment
 The project was built using [cljs-start](https://github.com/magomimmo/cljs-start). 
 
