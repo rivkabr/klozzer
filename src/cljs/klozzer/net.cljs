@@ -38,7 +38,7 @@
                       (put! c [:ok (? xhr.response)])
                       (put! c [:error (? xhr.status)]))))
     (! xhr.onerror (fn [e]
-                    (put! c [:error (?  e.target.status)])))
+                    (put! c [:error "net::ERR_INTERNET_DISCONNECTED"])))
     (!> xhr.send)
     c))
 
