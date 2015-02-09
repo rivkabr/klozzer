@@ -37,6 +37,8 @@
                     (if (<= 200 (? xhr.status) 300)
                       (put! c [:ok (? xhr.response)])
                       (put! c [:error (? xhr.status)]))))
+    (! xhr.onerror (fn [e]
+                    (put! c [:error (?  e.target.status)])))
     (!> xhr.send)
     c))
 
